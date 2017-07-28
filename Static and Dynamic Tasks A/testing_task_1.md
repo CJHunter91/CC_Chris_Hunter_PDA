@@ -11,6 +11,7 @@ def func1 val
   return false
   end
 end
+<!-- func1 is missing brackets around the val parameter and indentation of both return statements are incorrect -->
   
 dif max a b
   if a > b
@@ -20,12 +21,14 @@ dif max a b
   end 
 end 
 end 
+<!-- max has the def misspelled, no brackets around parameters, missing comma between parameters, doesn't return b on line 20 and it's not indented correctly, has repeated end at the end of the function -->
   
 def looper 
   for i in 1..10
   puts i
   end
 end
+<!-- looper puts statement needs indented on line 28, i needs to be returned after the for loop  -->
  
 failures = 0 
  
@@ -34,7 +37,7 @@ if looper == 10
 else
   puts "looper failed"
   failures = failures + 1
- 
+ <!-- looper if statement missing end -->
   
 if func1(3) == false
   puts "func1(3) passed"
@@ -50,6 +53,7 @@ else
   puts "func1(3) failed"
   failrues = failures + 1
 end
+<!-- spelling mistake of failures -->
 
   
 if failures 
@@ -57,5 +61,5 @@ if failures
 else
   puts "Test Passed"
 end
-
+<!-- failures if statement needs to have a conditional 'stating failures > 0' -->
 
