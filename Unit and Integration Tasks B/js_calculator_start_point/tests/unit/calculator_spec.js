@@ -17,4 +17,12 @@ describe('calculator', function () {
     assert.equal(5, calculator.runningTotal)
   })
 
+  it('it can subtract', function(){
+    calculator.previousTotal = '7';
+    calculator.subtract(4)
+    assert.equal(3, calculator.runningTotal)
+  })
+
+
+
 });
