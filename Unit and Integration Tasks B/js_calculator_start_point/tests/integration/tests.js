@@ -98,8 +98,22 @@ describe('calculator functionality', function() {
       nine.click();
       multiply.click();
     }
-    
+
     expect(running_total.getAttribute('value')).to.eventually.equal('31381059609');
+  })
+
+  it('should handle large numbers on input', function(){
+    var running_total = element(by.css('#running_total'))
+    var nine = element(by.css('#number9'))
+    multiply = element(by.css('#operator_multiply'));
+
+    for (var i = 0; i <= 10; i++) {
+      nine.click();
+    }
+    multiply.click();
+    nine.click();
+    multiply.click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('899999999991');
   })
 
 });
