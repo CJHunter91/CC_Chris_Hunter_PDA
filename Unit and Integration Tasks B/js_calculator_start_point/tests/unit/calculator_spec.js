@@ -55,6 +55,18 @@ describe('calculator', function () {
 
   })
 
+  it('can clear the current total without losing the calculation', function(){
+    calculator.numberClick(5);
+    calculator.operatorClick('+')
+    calculator.numberClick(5);
+    calculator.operatorClick('+')
+    calculator.numberClick(10);
+    calculator.clearClick();
+    calculator.numberClick(9);
+    calculator.operatorClick('=');
+    assert.equal(19, calculator.runningTotal);
+  })
+
 
 
 });
