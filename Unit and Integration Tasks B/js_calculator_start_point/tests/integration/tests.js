@@ -56,4 +56,17 @@ describe('calculator functionality', function() {
     expect(running_total.getAttribute('value')).to.eventually.equal('27');
   })
 
+  it('should chain multiple operations together', function(){
+    var running_total = element(by.css('#running_total'))
+    element(by.css('#number9')).click();
+    multiply = element(by.css('#operator_multiply'));
+    divide = element(by.css('#operator_divide'));
+    multiply.click();
+    element(by.css('#number2')).click();
+    divide.click();
+    element(by.css('#number6')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('3');
+  })
+
 });
