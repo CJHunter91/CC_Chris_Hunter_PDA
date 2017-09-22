@@ -69,4 +69,14 @@ describe('calculator functionality', function() {
     expect(running_total.getAttribute('value')).to.eventually.equal('3');
   })
 
+  it('should handle negative numbers', function(){
+    var running_total = element(by.css('#running_total'))
+    element(by.css('#number5')).click();
+    subtract = element(by.css('#operator_subtract'));
+    subtract.click();
+    element(by.css('#number7')).click();
+    subtract.click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('-2');
+  })
+
 });
