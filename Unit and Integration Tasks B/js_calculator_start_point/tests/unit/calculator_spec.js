@@ -23,6 +23,12 @@ describe('calculator', function () {
     assert.equal(3, calculator.runningTotal)
   })
 
+  it('it can multiply', function(){
+    calculator.previousTotal = '3';
+    calculator.add(5)
+    assert.equal(15, calculator.runningTotal)
+  })
+
 
 
 });
