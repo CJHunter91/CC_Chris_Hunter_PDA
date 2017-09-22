@@ -25,8 +25,14 @@ describe('calculator', function () {
 
   it('it can multiply', function(){
     calculator.previousTotal = '3';
-    calculator.add(5)
+    calculator.multiply(5)
     assert.equal(15, calculator.runningTotal)
+  })
+
+  it('it can divide', function(){
+    calculator.previousTotal = '21';
+    calculator.divide(7)
+    assert.equal(3, calculator.runningTotal)
   })
 
 
