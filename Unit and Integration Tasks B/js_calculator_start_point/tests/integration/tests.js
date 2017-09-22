@@ -116,4 +116,14 @@ describe('calculator functionality', function() {
     expect(running_total.getAttribute('value')).to.eventually.equal('899999999991');
   })
 
+  it('should handle dividing by 0', function(){
+    var running_total = element(by.css('#running_total'))
+    element(by.css('#number9')).click();
+    divide = element(by.css('#operator_divide'));
+    divide.click();
+    element(by.css('#number0')).click();
+    divide.click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('can not divide by 0');
+  })
+
 });
