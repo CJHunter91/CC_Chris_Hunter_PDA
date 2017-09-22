@@ -79,4 +79,27 @@ describe('calculator functionality', function() {
     expect(running_total.getAttribute('value')).to.eventually.equal('-2');
   })
 
+  it('should handle decimal values', function(){
+    var running_total = element(by.css('#running_total'))
+    element(by.css('#number9')).click();
+    divide = element(by.css('#operator_divide'));
+    divide.click();
+    element(by.css('#number2')).click();
+    divide.click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('4.5');
+  })
+
+  it('should handle large numbers', function(){
+    var running_total = element(by.css('#running_total'))
+    var nine = element(by.css('#number9'))
+    multiply = element(by.css('#operator_multiply'));
+
+    for (var i = 0; i <= 10; i++) {
+      nine.click();
+      multiply.click();
+    }
+    
+    expect(running_total.getAttribute('value')).to.eventually.equal('31381059609');
+  })
+
 });
