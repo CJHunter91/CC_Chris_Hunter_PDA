@@ -35,13 +35,24 @@ describe('calculator', function () {
     assert.equal(3, calculator.runningTotal)
   })
 
-  it('concatonates numbers clicked', function(){
+  it('concatenates numbers clicked', function(){
     calculator.numberClick('1');
     calculator.numberClick('2');
     calculator.numberClick('3');
     calculator.numberClick('4');
     calculator.numberClick('5');
     assert.equal(12345, calculator.runningTotal)
+  })
+
+  it('can do multiple operations', function(){
+    calculator.numberClick(5);
+    calculator.operatorClick('+')
+    calculator.numberClick(5);
+    calculator.operatorClick('+')
+    calculator.numberClick(10);
+    calculator.operatorClick('=');
+    assert.equal(20, calculator.runningTotal);
+
   })
 
 
